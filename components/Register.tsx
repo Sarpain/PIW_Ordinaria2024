@@ -4,8 +4,7 @@ type Props = {
   message?: string;
 };
 
-
-const Register:FunctionComponent<Props> = ({ message }) => (
+const Register: FunctionComponent<Props> = ({ message }) => (
   <div>
     <h2>Register</h2>
     {message &&

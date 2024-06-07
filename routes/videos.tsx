@@ -7,7 +7,6 @@ type State = {
   name: string;
   email: string;
 };
-
 type Data = {
   videos: Video[];
   userid: string;
@@ -20,12 +19,10 @@ export const handler: Handlers<Data, State> = {
     if (!API_URL) {
       throw new Error("API_URL is not set in the environment");
     }
-    
     const response = await fetch(`${API_URL}/videos/${userid}`);
     if (response.status !== 200) {
       return ctx.render({ videos: [], userid: "" });
     }
-
     const videos: Video[] = await response.json();
 
     return ctx.render({ videos, userid });

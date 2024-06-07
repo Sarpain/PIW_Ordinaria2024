@@ -12,7 +12,6 @@ type Data = {
   video: Video;
   userid: string;
 };
-
 export const handler: Handlers<Data, State> = {
   GET: async (req: Request, ctx: FreshContext<State, Data>) => {
     const userid = ctx.state.id;
@@ -28,6 +27,7 @@ export const handler: Handlers<Data, State> = {
         headers: { location: "/videos" },
       });
     }
+
     const video: Video = await response.json();
     return ctx.render({ video, userid });
   },

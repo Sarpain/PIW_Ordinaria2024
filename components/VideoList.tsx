@@ -4,7 +4,8 @@ import Fav from "../islands/Fav.tsx";
 
 type Props = {
   videos: Video[];
-  userid: string;};
+  userid: string;
+};
 
 const VideoList: FunctionComponent<Props> = ({ videos, userid }) => {
   return (
@@ -24,7 +25,7 @@ const VideoList: FunctionComponent<Props> = ({ videos, userid }) => {
               </p>
             </div>
           </a>
-          <Fav id={video.id} userid={userid} fav={video.fav} />
+          <Fav id={video.id} userid={userid} fav={video.fav}/>
         </div>
       ))}
     </div>

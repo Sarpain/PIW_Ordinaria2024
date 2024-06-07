@@ -1,21 +1,20 @@
-import {FunctionComponent} from "preact"
-import  Logout  from "../islands/Logout.tsx"
+import { FunctionComponent } from "preact";
+import Logout from "../islands/Logout.tsx";
 
-
- type Props={
-    userName:string;
+type Props = {
+  userName: string;
 };
 
-const Header:FunctionComponent<Props>=({userName}) =>{
-    return(
-        <header>
-            <div>
-                <span>
-                    {userName}
-                </span>
-                <Logout/>
-            </div>
-        </header>
-    )
-}
+const Header: FunctionComponent<Props> = ({ userName }) => {
+  return (
+    <header>
+      <div>
+        <span>
+          {userName}
+        </span>
+        <Logout/>
+      </div>
+    </header>
+  );
+};
 export default Header;

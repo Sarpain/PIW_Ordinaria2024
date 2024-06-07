@@ -10,7 +10,7 @@ type Props = {
 const VideoDetail: FunctionComponent<Props> = ({ video, userid }) => {
   return (
     <div>
-      <a href="/videos" >Go Back to List</a>
+      <a href="/videos">Go Back to List</a>
       <div>
         <iframe
           width="100%"
@@ -25,7 +25,7 @@ const VideoDetail: FunctionComponent<Props> = ({ video, userid }) => {
       </div>
       <h2>{video.title}</h2>
       <p>{video.description}</p>
-      <Fav id={video.id} fav={video.fav} userid={userid}/>
+      <Fav id={video.id} fav={video.fav} userid={userid} />
     </div>
   );
 };

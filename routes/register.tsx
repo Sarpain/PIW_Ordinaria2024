@@ -1,4 +1,9 @@
-import {FreshContext,Handlers,PageProps,RouteConfig,} from "$fresh/server.ts";
+import {
+  FreshContext,
+  Handlers,
+  PageProps,
+  RouteConfig,
+} from "$fresh/server.ts";
 import Register from "../components/Register.tsx";
 import jwt from "jsonwebtoken";
 import type { User } from "../types.ts";
@@ -9,8 +14,8 @@ export const config: RouteConfig = {
 };
 
 export type Data = {
-    message: string;
-  };
+  message: string;
+};
 
 export const handler: Handlers = {
   POST: async (req: Request, ctx: FreshContext<unknown, Data>) => {
@@ -28,7 +33,7 @@ export const handler: Handlers = {
       `${API_URL}/register`,
       {
         method: "POST",
-        headers: {"Content-Type": "application/json",},
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
           password,
@@ -55,7 +60,8 @@ export const handler: Handlers = {
           name: data.name,
         },
         JWT_SECRET,
-        {expiresIn: "24h"});
+        { expiresIn: "24h" },
+      );
       const headers = new Headers();
 
       setCookie(headers, {
@@ -78,9 +84,9 @@ export const handler: Handlers = {
 };
 
 const Page = (props: PageProps<Data>) => (
-    <Register
-      message={props.data?.message}
-    />
-  );
-  
-  export default Page;
+  <Register
+    message={props.data?.message}
+  />
+);
+
+export default Page;
